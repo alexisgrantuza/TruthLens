@@ -200,13 +200,6 @@ async function sha256Hex(blob) {
 
 ---
 
-If you want, I can:
-
-* Turn the above into a **minute-by-minute 24-hour schedule** with exact git tasks and commands, **or**
-* Scaffold the project with starter code (React + Vite + camera + hashing + web3.storage upload + Solana memo demo).
-
-Which would help you most right now?
-
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest?utm_source=chatgpt.com "SubtleCrypto: digest() method - Web APIs | MDN"
 [2]: https://old.web3.storage/?utm_source=chatgpt.com "Web3 Storage - Simple file storage with IPFS & Filecoin"
 [3]: https://filebase.com/blog/is-ipfs-storage-free/?utm_source=chatgpt.com "Is IPFS Storage Free?"
