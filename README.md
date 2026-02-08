@@ -1,7 +1,5 @@
 # The Immutable Eye — Full overview (adapted to **free resources**)
 
-Love the idea — it’s high-impact and very demoable in a day. Below I’ll keep your original structure but swap in free/open options, give a step-by-step 24-hour MVP plan, concrete tech choices, quick implementation tips, and realistic caveats.
-
 ---
 
 ## Tagline
