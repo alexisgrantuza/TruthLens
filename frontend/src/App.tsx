@@ -1,26 +1,45 @@
-import { ThemeProvider } from "@/components/theme-provider"
-import { ModeToggle } from "@/components/mode-toggle"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "@/pages/Home";
+import Login from "@/pages/Login";
+import SignUp from "@/pages/SignUp";
+import Gallary from "./pages/Gallary";
+import ProtectedRoute from "./components/ProtectedRoutes";
+import Dashboard from "./pages/TruthLens";
+import Capture from "./pages/Capture";
 
-function App() {
+export default function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="flex justify-end p-4">
-        <ModeToggle />
-      </div>
-      <main className="mx-auto max-w-3xl p-6">
-        <h1 className="text-2xl font-semibold">Light/Dark Theme Demo</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-300">
-          Use the toggle to switch themes.
-        </p>
-        <div className="mt-6 rounded-lg border border-gray-200 bg-white p-6 text-gray-900 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-100">
-          <p>This box adapts to the current theme.</p>
-          <button className="mt-4 rounded-md bg-gray-900 px-3 py-2 text-white dark:bg-white dark:text-gray-900">
-            Themed Button
-          </button>
-        </div>
-      </main>
-    </ThemeProvider>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/get-started" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/gallary"
+          element={
+            <ProtectedRoute>
+              <Gallary />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/TruthLens"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/capture"
+          element={
+            <ProtectedRoute>
+              <Capture />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<div>404 Not Found</div>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
